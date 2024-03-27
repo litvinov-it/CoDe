@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.textarea {
+    font-size: 16px;
+    width: 100%;
+    background-color: inherit;
+    border: 1px solid var(--minor-accent-color);
+    outline: none;
+    padding: 1.25rem;
+    border-radius: 10px;
+    resize: none;
+}
+
+.textarea::placeholder {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--minor-accent-color);
+}
+
+.label {
+    font-weight: 800;
+    font-size: 16px;
+}

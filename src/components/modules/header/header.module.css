@@ -1,0 +1,36 @@
+.header {
+    background-color: var(--bg-main-color);
+    border-radius: 75px;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 63px;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.phone {
+    color: var(--btn-accent-color);
+}
+
+.burger {
+    display: none;
+    margin-left: 1rem;
+}
+
+@media (width <=920px) {
+    .burger {
+        display: block;
+        z-index: 11;
+    }
+
+    .phone {
+        font-size: 14px;
+    }
+
+}

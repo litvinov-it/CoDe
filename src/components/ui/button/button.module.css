@@ -1,0 +1,32 @@
+.button {
+    background-color: var(--accent-color);
+    border: none;
+    padding: 1.25rem 2.5rem;
+    border-radius: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: transform .25s, background-color .25s;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:hover {
+    background-color: var(--btn-accent-color);
+}
+
+.text {
+    font-weight: 400;
+    font-size: 20px;
+    color: #fff;
+}
+
+@media (width <= 920px) {
+    .button {
+        padding: 1rem 1.5rem;
+    }
+}

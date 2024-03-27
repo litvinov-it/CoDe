@@ -1,0 +1,7 @@
+.container {
+    width: min(1160px, 100%);
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}

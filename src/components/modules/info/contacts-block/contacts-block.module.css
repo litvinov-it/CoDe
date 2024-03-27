@@ -1,0 +1,20 @@
+.contactsBlock {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.phone {
+    color: var(--btn-accent-color);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+@media (width <=620px) {
+    .contactsBlock {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-row: auto;
+    }
+}

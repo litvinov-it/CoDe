@@ -1,0 +1,19 @@
+.swiper {
+    width: 100%;
+    height: 500px;
+    border-radius: 48px;
+}
+
+.accent {
+    color: var(--accent-color);
+}
+
+.bold {
+    font-weight: 700;
+}
+
+@media (width <= 920px) {
+    .swiper {
+        height: inherit;
+    }
+}

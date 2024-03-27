@@ -1,0 +1,16 @@
+.modal {
+    padding: 5rem 3rem;
+    overflow-y: auto;
+}
+
+@media (width <= 920px) {
+    .modal {
+        padding: 2rem;
+    }
+}
+
+@media (width <= 420px)  {
+    .modal {
+        padding: 1rem;
+    }
+}

@@ -1,0 +1,32 @@
+.container {
+    width: 640px;
+}
+
+.title {
+    margin-bottom: 2rem;
+    font-size: 32px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.agree {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--minor-accent-color);
+}
+
+.link {
+    color: var(--accent-color);
+}
+
+@media (width <= 920px) {
+    .container {
+        width: 100%;
+    }
+}

@@ -1,0 +1,85 @@
+.container {
+    margin-block: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.title {
+    max-width: 600px;
+    font-weight: 600;
+    font-size: 46px;
+    margin-inline: auto;
+}
+
+.list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 1.5rem;
+    row-gap: 2rem;
+    list-style-type: none;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--card-bg-color);
+    border-radius: 30px;
+    padding: 2rem;
+}
+
+.inner {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+    max-width: 200px;
+}
+
+.imgWrapper {
+    margin-bottom: 1rem;
+}
+
+.titleItem {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.descriptionItem {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+@media (width <= 920px) {
+    .title {
+        font-weight: 500;
+        font-size: 24px;
+    }
+}
+
+@media (width <= 720px) {
+    .list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .item {
+        padding: 1rem;
+    }
+
+    .item:last-child {
+        grid-column: span 2;
+    }
+
+    .titleItem {
+        font-size: 12px;
+    }
+
+    .descriptionItem {
+        font-size: 9px;
+    }
+}

@@ -1,0 +1,14 @@
+.container {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-rows: repeat(1, auto);
+    grid-template-columns: repeat(4, auto);
+}
+
+@media (width <= 620px) {
+    .container {
+        grid-template-rows: repeat(3, auto);
+        grid-template-columns: auto;
+        gap: 2rem;
+    }
+}
