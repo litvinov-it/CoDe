@@ -2,6 +2,9 @@ import classes from "./advantages-blocks.module.css";
 import advantageBlockImg1 from "../../../sprites/advantages/block-1.png";
 import advantageBlockImg2 from "../../../sprites/advantages/block-2.png";
 import { AdvantagesBlock } from "../../components/advantages-block/advantages-block";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
 
 export const AdvantagesBlocks = () => {
   const advantagesItems = [
@@ -38,9 +41,24 @@ export const AdvantagesBlocks = () => {
       imgSrc: advantageBlockImg2,
     },
   ];
+  const containerRef = useRef();
+
+  useGSAP(
+    () => {
+      gsap.from(containerRef.current, {
+        y: -50,
+        opacity: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: containerRef.current
+        },
+      });
+    },
+    { scope: containerRef }
+  );
 
   return (
-    <div id="advantagesBlock" className={classes.container}>
+    <div ref={containerRef} id="advantagesBlock" className={classes.container}>
       {advantagesItems.map((advantagesItem, index) => (
         <AdvantagesBlock advantagesItem={advantagesItem} key={index + advantagesItem.title} index={index} />
       ))}

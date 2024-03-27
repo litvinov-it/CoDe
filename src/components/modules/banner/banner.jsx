@@ -6,6 +6,9 @@ import bannerImg2 from "../../../sprites/banners/2.png";
 import bannerImg3 from "../../../sprites/banners/3.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
 
 export const Banner = () => {
   const bannerItems = [
@@ -47,9 +50,26 @@ export const Banner = () => {
       imgSrc: bannerImg3,
     },
   ];
+  const containerRef = useRef();
+
+  useGSAP(
+    () => {
+      gsap.from(containerRef.current, {
+        y: -50,
+        opacity: 0,
+        duration: 1,
+        delay: .5,
+        scrollTrigger: {
+          trigger: containerRef.current
+        },
+      });
+    },
+    { scope: containerRef }
+  );
 
   return (
     <Swiper
+    ref={containerRef}
       id="banner"
       modules={[Navigation]}
       slidesPerView={1}

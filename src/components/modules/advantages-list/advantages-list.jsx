@@ -6,6 +6,9 @@ import { ReactComponent as AdvantagesImg4 } from "../../../sprites/advantages/4.
 import { ReactComponent as AdvantagesImg5 } from "../../../sprites/advantages/5.svg";
 import { ReactComponent as AdvantagesImg6 } from "../../../sprites/advantages/6.svg";
 import { ReactComponent as AdvantagesImg7 } from "../../../sprites/advantages/7.svg";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { useRef } from "react";
 
 export const AdvantagesList = () => {
   const advantagesItems = [
@@ -69,13 +72,40 @@ export const AdvantagesList = () => {
       icon: <AdvantagesImg7 className={classes.img} />,
     },
   ];
+  const containerRef = useRef();
+  const titleRef = useRef();
+  const listRef = useRef();
+
+  useGSAP(
+    () => {
+      gsap.from(titleRef.current, {
+        y: -50,
+        opacity: 0,
+        duration: 1,
+        delay: 1,
+        scrollTrigger: {
+          trigger: titleRef.current
+        },
+      });
+      gsap.from(listRef.current, {
+        y: -50,
+        opacity: 0,
+        duration: 1,
+        delay: 1.5,
+        scrollTrigger: {
+          trigger: listRef.current
+        },
+      });
+    },
+    { scope: containerRef }
+  );
 
   return (
-    <div id="advantages" className={classes.container}>
-      <h3 className={classes.title}>
+    <div ref={containerRef} id="advantages" className={classes.container}>
+      <h3 ref={titleRef} className={classes.title}>
         Обучение в&nbsp;CoDe&nbsp;&mdash; это удобно и&nbsp;результативно
       </h3>
-      <ul className={classes.list}>
+      <ul ref={listRef} className={classes.list}>
         {advantagesItems.map((item, idx) => (
           <li key={"advantages" + idx} className={classes.item}>
             <div className={classes.imgWrapper}>{item.icon}</div>
